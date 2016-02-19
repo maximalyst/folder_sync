@@ -1,0 +1,1 @@
+When no target folder exists, and a checksums folder exists in the parent, target folder is not created.
