@@ -14,7 +14,7 @@ class HashMe:
         BUFFERSIZE = 65536*2 # buffer reads 32 bytes at a time, because read() will otherwise put
                              # the entire file in memory, and our PDFs may potentially be large.
 
-		with open(self.file, 'rb') as self.testFile: #file opened in binary
+        with open(self.file, 'rb') as self.testFile: #file opened in binary
             self.fileBuffer = self.testFile.read(BUFFERSIZE)
 
             # read BUFFERSIZE bytes at a time until end of file
@@ -88,7 +88,7 @@ for i, folder in enumerate(dirList):
     checksumFolder = checksumParentFolder + folder.rsplit('/'+originalParentName)[-1]
 
     # make checksum folder for the current source folder
-	if not(os.path.isdir(checksumFolder)):
+    if not(os.path.isdir(checksumFolder)):
         os.makedirs(checksumFolder, exist_ok=True)
 
     for file in fileList[i]:
@@ -130,5 +130,5 @@ for i, folder in enumerate(dirList):
                     # now save the new file locally, copying with metadata...
                     #copyFile(folder+'/'+file, targetParent+folderName)
                     if not(os.path.isdir(targetParent+folderName)):
-                    os.makedirs(targetParent+folderName, exist_ok=True)
+                        os.makedirs(targetParent+folderName, exist_ok=True)
                     shutil.copy2(folder+'/'+file, targetParent+folderName)
