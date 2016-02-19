@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-'''Hey there I'm just trying to commit my changes kthxbai'''
 import hashlib
 import os
 import shutil
