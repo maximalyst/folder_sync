@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+'''Now I've downloaded he latest version, and I'll commit...'''
 import hashlib
 import os
 import shutil
