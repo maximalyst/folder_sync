@@ -132,3 +132,4 @@ for i, folder in enumerate(dirList):
 					if not(os.path.isdir(targetParent+folderName)):
 						os.makedirs(targetParent+folderName, exist_ok=True)
 					shutil.copy2(folder+'/'+file, targetParent+folderName)
+
