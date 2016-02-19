@@ -4,7 +4,7 @@ import os
 import shutil
 
 class HashMe:
-    '''Class for making hashed file objects and checksum files'''
+	'''Class for making hashed file objects and checksum files'''
 	def __init__(self, fileName):
 		self.file = fileName
 
