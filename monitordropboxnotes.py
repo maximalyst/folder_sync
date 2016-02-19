@@ -12,7 +12,7 @@ class HashMe:
 	def hash_file(self): # method for generating hash of object's input file
 		self.hashedbin = hashlib.md5() # generate binary hash object for file
 		BUFFERSIZE = 65536*2 # buffer reads 32 bytes at a time, because read() will otherwise put
-												# the entire file in memory, and our PDFs may potentially be large.
+							# the entire file in memory, and our PDFs may potentially be large.
 
 		with open(self.file, 'rb') as self.testFile: #file opened in binary
 			self.fileBuffer = self.testFile.read(BUFFERSIZE)
