@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+'''Do things commit globally at the source?'''
 import hashlib
 import os
 import shutil
