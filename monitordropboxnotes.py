@@ -2,6 +2,7 @@
 import hashlib
 import os
 import shutil
+import plistlib
 
 class HashMe:
     '''Class for making hashed file objects and checksum files'''
@@ -40,9 +41,9 @@ def copyFile(sourceDirectory, targetDirectory):
     shutil.copy2(sourceDirectory, targetDirectory)
 
 
-
-
-
+# Working on reading parent and target directories from settings plist file...
+with open('/Library/LaunchAgents/com.bstudios.folder_sync.plist', mode='r') as settings:
+    plistlib.load(settings,fmt=None)
 
 originalParent = '/Users/brandon/Programming/testing'
 originalParentName = originalParent.rsplit('/')[-1] # JUST the name of the parent folder
