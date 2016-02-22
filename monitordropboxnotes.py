@@ -4,7 +4,7 @@ import os
 import shutil
 import plistlib
 
-'''testing something real quick'''
+
 
 class HashMe:
     '''Class for making hashed file objects and checksum files'''
