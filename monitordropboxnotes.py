@@ -44,10 +44,12 @@ def copyFile(sourceDirectory, targetDirectory):
 
 
 # Working on reading parent and target directories from settings plist file...
-with open('/Library/LaunchAgents/com.bstudios.folder_sync.plist', mode='r') as settings:
-    plistlib.realPlist(settings)
+with open('/Users/brandon/Programming/folder_sync/com.bstudios.folder_sync.plist', mode='rb') as f:
+    settings = plistlib.load(f)
+    originalParent = settings["syncParentNames"]
+    originalParentName = settings["syncTargetNames"]
 
-originalParent = '/Users/brandon/Programming/testing'
+#originalParent = '/Users/brandon/Programming/testing'
 originalParentName = originalParent.rsplit('/')[-1] # JUST the name of the parent folder
 # Target directory for all files and subfolders to copy to:
 targetParent = '/Users/brandon/Programming/testing2'
