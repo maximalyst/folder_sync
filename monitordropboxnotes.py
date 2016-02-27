@@ -47,25 +47,30 @@ def copyFile(sourceDirectory, targetDirectory):
 with open('/Users/brandon/Programming/folder_sync/com.bstudios.folder_sync.plist', mode='rb') as f:
     settings = plistlib.load(f)
     originalParent = settings["syncParentNames"]
-    originalParentName = settings["syncTargetNames"]
+    originalParentName = [] # for holding the bare directory name of the parent folder
+    for i, path in enumerate(originalParent):
+        originalParentName.append(path.rsplit('/')[-1]) # JUST the name of the parent folder
+    targetParent = settings["syncTargetNames"]
+    fileType = settings["fileTypes"]
 
 #originalParent = '/Users/brandon/Programming/testing'
-originalParentName = originalParent.rsplit('/')[-1] # JUST the name of the parent folder
+
 # Target directory for all files and subfolders to copy to:
-targetParent = '/Users/brandon/Programming/testing2'
-fileType = '.txt'
+# targetParent = '/Users/brandon/Programming/testing2'
 
-if not fileType.startswith('.'):
-    fileType = '.' + fileType
+for i, type in enumerate(fileType):
+    if not type.startswith('.'):
+        fileType[i] = '.' + type
 
 
-checksumParentFolder = originalParent+'/checksums'
+checksumParentFolder = [oP + '/checksums' for oP in originalParent]
 # Just in case there isn't a checksums folder in the directory we're following:
-if not(os.path.isdir(checksumParentFolder)):
-    os.makedirs(checksumParentFolder, exist_ok=True)
+for cspf in checksumParentFolder:
+    if not(os.path.isdir(cspf)):
+        os.makedirs(cspf, exist_ok=True)
     # condition eliminates a possible race condition, so it's a bit safer. Better safe than sorry. Thanks Python 3.
 
-
+# ^^^^^^^^COMPLETE TO THIS POINT^^^^^^^
 # Generate lists of Directories and Subdirectories, and all files within:
 dirList = [x[0] for x in os.walk(originalParent)]
 # folderList = [x[1] for x in os.walk(originalParent)] # don't need this line
