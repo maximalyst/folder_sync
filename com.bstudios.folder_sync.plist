@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.bstudios.folder_sync</string>
+	<key>Program</key>
+	<string>/Users/brandon/Programming/folder_sync/monitordropboxnotes.py</string>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>StartCalendarInterval</key>
+	<dict>
+		<key>Hour</key>
+		<integer>2</integer>
+	</dict>
+	<!--
+	Change the following names to the parent and target directory(ies) name(s), and filetypes to copy. No trailing slashes!
+	-->
+	<key>syncParentNames</key>
+	<array>
+		<string>/Users/brandon/Programming/testing</string>
+		<string>/Users/brandon/Programming/testing4</string>
+	</array>
+	<key>syncTargetNames</key>
+	<array>
+		<string>/Users/brandon/Programming/testing2</string>
+	</array>
+	<key>fileTypes</key>
+	<array>
+	    <string>.txt</string>
+	</array>
+</dict>
+</plist>
