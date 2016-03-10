@@ -42,6 +42,8 @@ def copyFile(sourceDirectory, targetDirectory):
 
     shutil.copy2(sourceDirectory, targetDirectory)
 
+dirList = []
+fileList = []
 
 # Working on reading parent and target directories from settings plist file...
 with open('/Users/brandon/Programming/folder_sync/com.bstudios.folder_sync.plist', mode='rb') as f:
@@ -72,15 +74,16 @@ for cspf in checksumParentFolder:
 
 # ^^^^^^^^COMPLETE TO THIS POINT^^^^^^^
 # Generate lists of Directories and Subdirectories, and all files within:
-dirList = [x[0] for x in os.walk(originalParent)]
-# folderList = [x[1] for x in os.walk(originalParent)] # don't need this line
-fileList = [x[2] for x in os.walk(originalParent)]
+for i, op in enumerate(originalParent):
+    dirList.append([x[0] for x in os.walk(op)])
+    # folderList = [x[1] for x in os.walk(originalParent)] # don't need this line
+    fileList.append([x[2] for x in os.walk(op)])
 
 #Need to remove files that aren't of the type we're looking for
 for subfileList in fileList:
     temp = subfileList.copy() # Python passes by reference; force pass by copy
     for file in temp:
-        if not file.endswith(fileType):
+        if file.endswith(fileType):
             subfileList.remove(file)
 
 
