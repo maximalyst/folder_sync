@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.bstudios.monitordropboxnotes</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/local/bin/python3.5</string>
+		<string>/Library/Custom Background Daemons/monitordropboxnotes</string>
+	</array>
+	<key>StartCalendarInterval</key>
+	<array>
+		<dict>
+			<key>Hour</key>
+			<string>1</string>
+			<key>Minute</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>Hour</key>
+			<integer>13</integer>
+			<key>Minute</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>syncParentNames</key>
+	<array>
+		<string>/Users/brandon/Dropbox/Notability/`AOE 4404 Numerical Methods</string>
+		<string>/Users/brandon/Dropbox/Notability/`AOE 5114 High Speed Aero</string>
+		<string>/Users/brandon/Dropbox/Notability/`AOE 5144 Advanced Boundary Layer</string>
+	</array>
+	<key>syncTargetName</key>
+	<string>/Users/brandon/Documents</string>
+	<key>fileTypes</key>
+	<array>
+		<string>.pdf</string>
+	</array>
+</dict>
+</plist>
